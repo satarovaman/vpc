@@ -1,0 +1,21 @@
+Resources:
+#thi is my vpc
+  527VPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 10.0.0.0/16
+      EnableDnsSupport: true
+     ##private subnet
+  subnetName:
+    Type: AWS::EC2::Subnet
+    Properties:
+      AvailabilityZone: us-east-1
+      VpcId: !Ref 527VPC
+      CidrBlock: 10.0.0.0/24
+      ###public subnet
+  subnetPublic:
+    Type: AWS::EC2::Subnet
+    Properties:
+      AvailabilityZone: us-east-1
+      VpcId: !Ref 527VPC
+      CidrBlock: 10.0.1.0/24
