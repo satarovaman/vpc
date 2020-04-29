@@ -12,3 +12,4 @@ Resources:
       AvailabilityZone: us-east-1
       VpcId: !Ref myVPC
       CidrBlock: 10.0.0.0/24
+      
