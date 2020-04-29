@@ -2,8 +2,8 @@ Resources:
   myVPC:
     Type: AWS::EC2::VPC
     Properties:
-     CidrBlock: 10.0.0.0/16
-     EnableDnsSupport: true
+      CidrBlock: 10.0.0.0/16
+      EnableDnsSupport: true
      ##private subnet
   subnetName:
     Type: AWS::EC2::Subnet
@@ -11,3 +11,4 @@ Resources:
       AvailabilityZone: us-east-1
       VpcId: !Ref 'myVPC'
       CidrBlock: 10.0.0.0./24
+
