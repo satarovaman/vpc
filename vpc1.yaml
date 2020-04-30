@@ -23,7 +23,13 @@ Resources:
   PublicRouteTable:
         Type: 'AWS::EC2::RouteTable'
         Properties:
-          VpcId: !Ref ourVPC           
+          VpcId: !Ref ourVPC
+          ###assaciating route table to subnet
+  PublicSubnetRouteTableAssociation:
+        Type: 'AWS::EC2::SubnetRouteTableAssociation'
+        Properties:
+          SubnetId: !Ref subnetPublic
+          RouteTableId: !Ref PublicRouteTable                
    
 
 
