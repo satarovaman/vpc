@@ -32,10 +32,6 @@ Resources:
           RouteTableId: !Ref PublicRouteTable
   igwWorld:
     Type: AWS::EC2::InternetGateway
-    Properties:
-      Tags:
-        - Key: keyname
-          Value: value
   AttachGateway:
     Type: AWS::EC2::VPCGatewayAttachment
     Properties:
