@@ -18,7 +18,8 @@ Resources:
     Properties:
       AvailabilityZone: us-east-2b
       VpcId: !Ref 527VPC
-      CidrBlock: 10.0.1.0/24    
+      CidrBlock: 10.0.1.0/24 
+      ##public route   
   PublicRouteTable:
         Type: 'AWS::EC2::RouteTable'
         Properties:
@@ -36,12 +37,9 @@ Resources:
         Properties:
           RouteTableId: !Ref PublicRouteTable
           DestinationCidrBlock: 0.0.0.0/0  
+          #internet gateway
   igw527:
     Type: AWS::EC2::InternetGateway
-    Properties:
-      Tags:
-        - Key: keyname
-          Value: value
   AttachGateway:
     Type: AWS::EC2::VPCGatewayAttachment
     Properties:
