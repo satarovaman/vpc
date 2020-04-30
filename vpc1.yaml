@@ -23,14 +23,7 @@ Resources:
   PublicRouteTable:
         Type: 'AWS::EC2::RouteTable'
         Properties:
-          VpcId: !Ref ourVPC
-  igw527:
-    Type: AWS::EC2::InternetGateway
-  AttachGateway:
-    Type: AWS::EC2::VPCGatewayAttachment
-    Properties:
-      VpcId: ourVPC
-      InternetGatewayId: !Ref igw527               
+          VpcId: !Ref ourVPC           
    
 
 
