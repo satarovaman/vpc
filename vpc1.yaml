@@ -30,14 +30,17 @@ Resources:
         Properties:
           SubnetId: !Ref subnetPublic
           RouteTableId: !Ref PublicRouteTable
-  PublicRoute:
-        Type: 'AWS::EC2::Route'
-        Properties:
-          RouteTableId: !Ref PublicRouteTable
-          DestinationCidrBlock: 0.0.0.0/0                        
-   
-
-
+  igwWorld:
+    Type: AWS::EC2::InternetGateway
+    Properties:
+      Tags:
+        - Key: keyname
+          Value: value
+  AttachGateway:
+    Type: AWS::EC2::VPCGatewayAttachment
+    Properties:
+      VpcId: ourVPC
+      InternetGatewayId: !Ref igwWorld
 
      
 
