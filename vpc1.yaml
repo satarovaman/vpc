@@ -24,9 +24,6 @@ Resources:
         Type: 'AWS::EC2::RouteTable'
         Properties:
           VpcId: !Ref 527VPC
-          Tags:
-            - Key: Network
-              Value: Public
   PublicSubnet1RouteTableAssociation:
         Type: 'AWS::EC2::SubnetRouteTableAssociation'
         Properties:
