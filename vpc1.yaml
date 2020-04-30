@@ -35,7 +35,18 @@ Resources:
         Type: 'AWS::EC2::Route'
         Properties:
           RouteTableId: !Ref PublicRouteTable
-          DestinationCidrBlock: 0.0.0.0/0         
+          DestinationCidrBlock: 0.0.0.0/0  
+  igw527:
+    Type: AWS::EC2::InternetGateway
+    Properties:
+      Tags:
+        - Key: keyname
+          Value: value
+  AttachGateway:
+    Type: AWS::EC2::VPCGatewayAttachment
+    Properties:
+      VpcId: 527VPC
+      InternetGatewayId: !Ref igw527               
    
 
 
