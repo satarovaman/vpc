@@ -30,8 +30,15 @@ Resources:
         Properties:
           SubnetId: !Ref subnetPublic
           RouteTableId: !Ref PublicRouteTable
+          #internet gateway
   igwWorld:
     Type: AWS::EC2::InternetGateway
+  routePublic:
+    Type: AWS::EC2::Route
+    Properties:
+      RouteTableId: PublicRouteTable
+      DestinationCidrBlock: 0.0.0.0/0
+      GatewayId: igwWorld
 
      
 
