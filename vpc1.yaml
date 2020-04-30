@@ -24,17 +24,6 @@ Resources:
         Type: 'AWS::EC2::RouteTable'
         Properties:
           VpcId: !Ref 527VPC
-  PublicSubnet1RouteTableAssociation:
-        Type: 'AWS::EC2::SubnetRouteTableAssociation'
-        Properties:
-          SubnetId: !Ref subnetPublic
-          RouteTableId: !Ref PublicRouteTable 
-  PublicRoute:
-        Type: 'AWS::EC2::Route'
-        Properties:
-          RouteTableId: !Ref PublicRouteTable
-          DestinationCidrBlock: 0.0.0.0/0  
-          #internet gateway
   igw527:
     Type: AWS::EC2::InternetGateway
   AttachGateway:
