@@ -1,6 +1,6 @@
 Resources:
 #thi is my vpc
-  527VPC:
+  ourVPC:
     Type: AWS::EC2::VPC
     Properties:
       CidrBlock: 10.0.0.0/16
@@ -10,26 +10,26 @@ Resources:
     Type: AWS::EC2::Subnet
     Properties:
       AvailabilityZone: us-east-2a
-      VpcId: !Ref 527VPC
+      VpcId: !Ref ourVPC
       CidrBlock: 10.0.0.0/24
       ###public subnet
   subnetPublic:
     Type: AWS::EC2::Subnet
     Properties:
       AvailabilityZone: us-east-2b
-      VpcId: !Ref 527VPC
+      VpcId: !Ref ourVPC
       CidrBlock: 10.0.1.0/24 
       ##public route   
   PublicRouteTable:
         Type: 'AWS::EC2::RouteTable'
         Properties:
-          VpcId: !Ref 527VPC
+          VpcId: !Ref ourVPC
   igw527:
     Type: AWS::EC2::InternetGateway
   AttachGateway:
     Type: AWS::EC2::VPCGatewayAttachment
     Properties:
-      VpcId: 527VPC
+      VpcId: ourVPC
       InternetGatewayId: !Ref igw527               
    
 
