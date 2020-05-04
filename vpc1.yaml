@@ -38,7 +38,7 @@ Resources:
     Properties:
       RouteTableId: PublicRouteTable
       DestinationCidrBlock: 0.0.0.0/0
-      GatewayId: igwWorld
+      GatewayId: !Ref igwWorld
 
      
 
